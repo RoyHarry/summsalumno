@@ -1,1 +1,0 @@
-INSERT INTO alumno (primer, segundo, paterno, materno) VALUES ('Roy','Harry','Colorado','Asencio');

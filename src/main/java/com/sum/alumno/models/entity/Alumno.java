@@ -6,56 +6,87 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "alumno")
 public class Alumno implements Serializable{
 	
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 271146932264451229L;
 	
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id;
-	private String primer;
-	private String segundo;
-	private String paterno;
-	private String materno;
-	public Long getId() {
-		return id;
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private Long idalumno;
+	private String codigo;	
+	private String primernombre;
+	private String segundonombre;
+	private String apellidopaterno;
+	private String apellidomaterno;
+	private String planestudio;
+	private String periodoacademico;
+	@OneToOne
+	@JoinColumn(name = "idinfpersonal")
+	private InformacionPersonal idinfpersonal;
+	public Long getIdalumno() {
+		return idalumno;
 	}
-	public void setId(Long id) {
-		this.id = id;
+	public void setIdalumno(Long idalumno) {
+		this.idalumno = idalumno;
 	}
-	public String getPrimer() {
-		return primer;
+	public String getCodigo() {
+		return codigo;
 	}
-	public void setPrimer(String primer) {
-		this.primer = primer;
+	public void setCodigo(String codigo) {
+		this.codigo = codigo;
 	}
-	public String getSegundo() {
-		return segundo;
+	public String getPrimernombre() {
+		return primernombre;
 	}
-	public void setSegundo(String segundo) {
-		this.segundo = segundo;
+	public void setPrimernombre(String primernombre) {
+		this.primernombre = primernombre;
 	}
-	public String getPaterno() {
-		return paterno;
+	public String getSegundonombre() {
+		return segundonombre;
 	}
-	public void setPaterno(String paterno) {
-		this.paterno = paterno;
+	public void setSegundonombre(String segundonombre) {
+		this.segundonombre = segundonombre;
 	}
-	public String getMaterno() {
-		return materno;
+	public String getApellidopaterno() {
+		return apellidopaterno;
 	}
-	public void setMaterno(String materno) {
-		this.materno = materno;
+	public void setApellidopaterno(String apellidopaterno) {
+		this.apellidopaterno = apellidopaterno;
 	}
-
+	public String getApellidomaterno() {
+		return apellidomaterno;
+	}
+	public void setApellidomaterno(String apellidomaterno) {
+		this.apellidomaterno = apellidomaterno;
+	}
+	public String getPlanestudio() {
+		return planestudio;
+	}
+	public void setPlanestudio(String planestudio) {
+		this.planestudio = planestudio;
+	}
+	public String getPeriodoacademico() {
+		return periodoacademico;
+	}
+	public void setPeriodoacademico(String periodoacademico) {
+		this.periodoacademico = periodoacademico;
+	}
+	public InformacionPersonal getIdinfpersonal() {
+		return idinfpersonal;
+	}
+	public void setIdinfpersonal(InformacionPersonal idinfpersonal) {
+		this.idinfpersonal = idinfpersonal;
+	}
+	
+	
+	
 	
 	
 	
