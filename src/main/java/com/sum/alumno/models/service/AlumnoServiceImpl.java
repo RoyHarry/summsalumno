@@ -39,7 +39,7 @@ public class AlumnoServiceImpl implements IAlumnoService{
 
 	@Override
 	@Transactional(readOnly = true)
-	public Alumno findById(Long id) {
+	public Alumno buscarAlumnoById(Long id) {
 		
 		return alumnoDao.findById(id).orElse(null);
 	}
@@ -73,5 +73,33 @@ public class AlumnoServiceImpl implements IAlumnoService{
 	public PreMatricula findByIdPreMatricula(Long id) {
 		return preMatriculaDao.findById(id).orElse(null);
 	}
+
+	@Override
+	public InformacionPersonal guardarInfoPersonal(InformacionPersonal informacionPersonal) {
+		return informacionPersonalDao.save(informacionPersonal);
+	}
+
+	@Override
+	public Alumno guardarAlumno(Alumno alumno) {
+		return alumnoDao.save(alumno);
+	}
+
+	@Override
+	public InformacionPersonal actualizarInfoPersonal(InformacionPersonal informacionPersonal) {
+		
+		return informacionPersonalDao.save(informacionPersonal);
+	}
+
+	@Override
+	public void eliminarInfoPersonal(Long id) {
+		informacionPersonalDao.deleteById(id);
+	}
+
+	@Override
+	public void eliminarAlumno(Long id) {
+		alumnoDao.deleteById(id);
+	}
+
+	
 
 }

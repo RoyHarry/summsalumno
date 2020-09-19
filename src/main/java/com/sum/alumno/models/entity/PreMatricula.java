@@ -2,6 +2,7 @@ package com.sum.alumno.models.entity;
 
 import java.io.Serializable;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -24,7 +25,7 @@ public class PreMatricula implements Serializable{
 	private String credito;
 	private String seccion;
 	private String docenteasignado;
-	@OneToOne
+	@OneToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "idalumno")
 	private Alumno idalumno;
 	public Long getIdmatricula() {

@@ -27,7 +27,28 @@ public class InformacionPersonal implements Serializable{
 	private String correoinstitucional;
 	private String correopersonal;
 	private String domicilio;
-	private String direccion;
+	private String direccion;		
+	
+	public InformacionPersonal() {
+		super();
+	}
+	public InformacionPersonal(Long idinfpersonal, String dni, String estadocivil, String sexo, String fechanacimiento,
+			String lugarnacimiento, String telefono, String celular, String correoinstitucional, String correopersonal,
+			String domicilio, String direccion) {
+		super();
+		this.idinfpersonal = idinfpersonal;
+		this.dni = dni;
+		this.estadocivil = estadocivil;
+		this.sexo = sexo;
+		this.fechanacimiento = fechanacimiento;
+		this.lugarnacimiento = lugarnacimiento;
+		this.telefono = telefono;
+		this.celular = celular;
+		this.correoinstitucional = correoinstitucional;
+		this.correopersonal = correopersonal;
+		this.domicilio = domicilio;
+		this.direccion = direccion;
+	}
 	public String getDni() {
 		return dni;
 	}

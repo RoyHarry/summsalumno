@@ -2,6 +2,7 @@ package com.sum.alumno.models.entity;
 
 import java.io.Serializable;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -18,7 +19,7 @@ public class Alumno implements Serializable{
 	
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long idalumno;
 	private String codigo;	
 	private String primernombre;
@@ -27,9 +28,26 @@ public class Alumno implements Serializable{
 	private String apellidomaterno;
 	private String planestudio;
 	private String periodoacademico;
-	@OneToOne
+	@OneToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "idinfpersonal")
-	private InformacionPersonal idinfpersonal;
+	private InformacionPersonal idinfpersonal;	
+	
+	public Alumno() {
+		super();
+	}
+	public Alumno(Long idalumno, String codigo, String primernombre, String segundonombre, String apellidopaterno,
+			String apellidomaterno, String planestudio, String periodoacademico, InformacionPersonal idinfpersonal) {
+		super();
+		this.idalumno = idalumno;
+		this.codigo = codigo;
+		this.primernombre = primernombre;
+		this.segundonombre = segundonombre;
+		this.apellidopaterno = apellidopaterno;
+		this.apellidomaterno = apellidomaterno;
+		this.planestudio = planestudio;
+		this.periodoacademico = periodoacademico;
+		this.idinfpersonal = idinfpersonal;
+	}
 	public Long getIdalumno() {
 		return idalumno;
 	}

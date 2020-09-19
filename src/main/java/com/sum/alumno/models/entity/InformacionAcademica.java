@@ -2,6 +2,7 @@ package com.sum.alumno.models.entity;
 
 import java.io.Serializable;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -27,7 +28,7 @@ public class InformacionAcademica implements Serializable{
 	private String estadopermanencia;
 	private String ultimamatricula;
 	private String promedioultimamatricula;
-	@OneToOne
+	@OneToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "idalumno")
 	private Alumno idalumno;
 	public Long getIdinfacademica() {

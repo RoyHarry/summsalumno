@@ -10,10 +10,15 @@ import com.sum.alumno.models.entity.PreMatricula;
 public interface IAlumnoService {
 
 	public List<Alumno> findAll();
-	public Alumno findById(Long id);
+	public Alumno buscarAlumnoById(Long id);
+	public Alumno guardarAlumno(Alumno alumno);
+	public void eliminarAlumno(Long id);	
 	
 	public List<InformacionPersonal> findAllInfoPersonal();
-	public InformacionPersonal findByIdInfoPersonal(Long id);
+	public InformacionPersonal findByIdInfoPersonal(Long id);		
+	public InformacionPersonal guardarInfoPersonal(InformacionPersonal informacionPersonal);
+	public InformacionPersonal actualizarInfoPersonal(InformacionPersonal informacionPersonal);	
+	public void eliminarInfoPersonal(Long id);
 	
 	public List<InformacionAcademica> findAllInfoAcademica();
 	public InformacionAcademica findByIdInfoAcademica(Long id);
